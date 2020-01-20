@@ -245,7 +245,9 @@ var VueTinySlider = {
 	},
 	beforeDestroy: function() {
 		if(this.slider) {
-			this.slider.destroy();
+			setTimeout(() => {
+				this.slider.destroy();
+			}, 2000);
 		}
 	},
 	methods: {
