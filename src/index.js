@@ -244,7 +244,6 @@ var VueTinySlider = {
 		}
 	},
 	beforeDestroy: function() {
-		console.log('destroy slider');
 		setTimeout(() => {
 			if(this.slider) {
 				this.slider.destroy();
