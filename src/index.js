@@ -243,13 +243,13 @@ var VueTinySlider = {
 			this.init();
 		}
 	},
-	// beforeDestroy: function() {
-	// 	if(this.slider) {
-	// 		setTimeout(() => {
-	// 			this.slider.destroy();
-	// 		}, 2000);
-	// 	}
-	// },
+	destroyed: function() {
+		console.log('Destroy slider');
+		
+		if(this.slider) {
+			this.slider.destroy();
+		}
+	},
 	methods: {
 		$_vueTinySlider_subscribeTo (eventName) {
 			this.slider.events.on(eventName, (info) => {
