@@ -243,12 +243,13 @@ var VueTinySlider = {
 			this.init();
 		}
 	},
-	destroyed: function() {
-		console.log('Destroy slider');
-		
-		if(this.slider) {
-			this.slider.destroy();
-		}
+	beforeDestroy: function() {
+		console.log('destroy slider');
+		setTimeout(() => {
+			if(this.slider) {
+				this.slider.destroy();
+			}
+		}, 3000)		
 	},
 	methods: {
 		$_vueTinySlider_subscribeTo (eventName) {
